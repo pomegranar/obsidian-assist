@@ -2,7 +2,7 @@
 
 ![image](./images/readme_cover.png)
 
-**Note:** *This project is experimental and primarily a hobby endeavor.*
+**Note:** _This project is experimental and primarily a hobby endeavor._
 
 **`obsidian-assist`** aims to make **Zettelkasten-style note-taking** the foundation of interactions with Large Language Models (LLMs). By using an **Obsidian vault as the backend**, users retain full control over the relationships between notes, enabling them to explicitly define, edit, and guide context-building for LLM responses.
 
@@ -22,10 +22,9 @@ Automatically convert PDFs, PowerPoint presentations, and Markdown files into st
 - The resulting Markdown files are then segmented and analyzed using LLMs and Vector Databases.
 - Each segment is transformed into an individual, interlinked note to support a connected note-taking workflow in Obsidian.
 
-
 ##### Tutorial
-[![Watch the video](./images/gen.jpg)](https://www.youtube.com/embed/JVaCnP9epLs?si=B0j5eKWLuZHntn3L)
 
+[![Watch the video](./images/gen.jpg)](https://www.youtube.com/embed/JVaCnP9epLs?si=B0j5eKWLuZHntn3L)
 
 ---
 
@@ -38,20 +37,16 @@ Interact with and analyze the contents of an Obsidian vault through two distinct
 
 - **Graph-Based Contextual Search**  
   Utilizes user-defined relationships (graph edges) between notes to build contextual understanding. This method offers three interaction modes:
-  
   1. **Auto Node Traversal**  
      Start chatting directly — the system identifies the most relevant node to your query and traverses its neighboring nodes to build context.
-  
   2. **Fixed Start Node**  
      Specify a starting node — responses are centered around this predefined note.
-  
   3. **Start-to-End Path Search**  
      Specify both a start and end node — the shortest path between them is used to build the context for the response.
 
 ##### Tutorial
+
 [![Watch the video](./images/chat.jpg)](https://www.youtube.com/embed/wP2JzcK-qpg?si=3dMe23_F4nh3SXOk)
-
-
 
 ---
 
@@ -92,32 +87,32 @@ docker compose up
 Make sure you have the NVIDIA Container Toolkit installed on your host machine. You can verify this by checking if the `nvidia-smi` command works in your terminal.
 
 ```docker
-### build: 
+### build:
 docker compose build --no-cache
-### start: 
+### start:
 docker compose up
 ```
 
 ### For CPU
 
 ```docker
-### build: 
+### build:
 docker compose -f docker-compose.cpu.yml build --no-cache
-### start: 
+### start:
 docker compose -f docker-compose.cpu.yml up
 ```
-
 
 ## Mount paths to access your files
 
 ### Linux/Mac Downloads directory
-```${HOME:-/home}/Downloads:/home/Downloads```
+
+`${HOME:-/home}/Downloads:/home/Downloads`
 
 ### Windows Downloads directory
 
 For windows, the image is mounted to the Downloads folder
 
-```${USERPROFILE:-C:\Users}/Downloads:/windows/Downloads```
+`${USERPROFILE:-C:\Users}/Downloads:/windows/Downloads`
 
 You provide the source file like
 
@@ -133,26 +128,29 @@ Your vault path would be like
 
 ### For macOS, which may have Downloads in a different location
 
-```${HOME}/Downloads:/mac/Downloads```
+`${HOME}/Downloads:/mac/Downloads`
 
 ## Running with conda
 
 Make sure to set the environment variables.
 
 Create an environment
+
 ```
-$ conda create -n obsdidian python=3.11
+$ conda create -n obsidian python=3.11
 ```
 
 Install requirements.txt
+
 ```
 
-$ conda activate obsdidian
+$ conda activate obsidian
 
 $ pip install --no-cache-dir --no-deps -r requirements.txt
 ```
 
 Run the app
+
 ```
 $ python app.py
 ```
